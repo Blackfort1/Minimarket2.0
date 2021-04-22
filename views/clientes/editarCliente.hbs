@@ -1,0 +1,80 @@
+<div class="container p-4">
+    <h2 style="text-align: center;">Actualizar Clientes</h2>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" autocomplete="off"  >
+                     
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="RUT" name="RUT" placeholder="RUT" disabled value="{{cl.Rut}}"
+                                aria-autocomplete="none">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="NOMBRE" placeholder="Primer Nombre" value="{{cl.Nombre}}">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="APELLIDOP" placeholder="Apellido Paterno" value="{{cl.Apellido_Paterno}}"> 
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="APELLIDOM" placeholder="Apellido Materno" value="{{cl.Apellido_Materno}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-control" id="sexo" name="SEXO">
+                             <option value="{{cl.Id_Sexo}}">{{cl.Sexo}}</option>
+                             <option value="1">Masculino</option>
+                             <option value="2">Femenino</option>
+                             <option value="3">Otro</option>
+
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="TELEFONO" placeholder="Teléfono ej: 9541234547" value="{{cl.Telefono}}">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="CORREO" placeholder="Correo@ejemplo.com" value="{{cl.Correo}}">
+                        </div>
+                         
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="CALLE" placeholder="Calle" value="{{cl.Calle}}">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="NUMERO" placeholder="Número ej: 123" value="{{cl.Numero}}">
+                        </div>
+                       <div class="mb-3">
+                            <select class="form-control" id="region" name="REGION">
+                             <option value="{{cl.Id_region}}">{{cl.Region}}</option>
+                             {{#each regiones}}
+                                <option value="{{Id_Region}}">{{Nombre}}</option>
+                             {{/each}}
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" id="comunas" name="COMUNA">
+                             <option value="{{cl.Id_Comuna}}">{{cl.Comuna}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <select class="form-control" id="tipo" name="TIPO">
+                             <option value="{{cl.Id_Tipo}}">{{cl.Tipo}}</option>
+                             <option value="1">Persona</option>
+                             <option value="2">Empresa</option>
+                          
+                            </select>
+                        </div>
+                      
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">
+                                Actualizar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

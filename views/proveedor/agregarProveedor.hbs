@@ -1,0 +1,71 @@
+<h2 style="text-align: center;">Agregar Proveedor</h2>
+<div class="container p-4">
+  <form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">RUT</label>
+      <input type="text" class="form-control" id="RUT" name="RUT" placeholder="RUT" autofocus aria-autocomplete="none"
+        oninput="checkRut(this)" required>
+      <div class="valid-feedback">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Region</label>
+      <select class="form-control" id="region" name="REGION">
+        <option value="0">Seleccione su región...</option>
+        {{#each regiones}}
+        <option value={{Id_Region}}>{{Nombre}}</option>
+        {{/each}}
+
+      </select>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Comuna</label>
+      <select class="form-control" id="comunas" name="COMUNAS">
+        <option value="0">Seleccione su comuna...</option>
+      </select>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" value="" required>
+      <div class="valid-feedback">s
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Telefono</label>
+      <input type="text" class="form-control" id="TELEFONO" name="TELEFONO" placeholder="Teléfono ej: 9541234547"
+        required>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="DIRECCION" name="DIRECCION" required>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="validationCustom05" class="form-label">Numero</label>
+      <input type="text" class="form-control" id="NUMERO" name="NUMERO" required>
+      <div class="invalid-feedback">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Correo</label>
+      <div class="input-group has-validation">
+        <input type="email" class="form-control" id="CORREO" name="CORREO" placeholder="Correo@ejemplo.com" required>
+        <div class="invalid-feedback">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Agregar Proveedor</button>
+    </div>
+  </form>
+</div>

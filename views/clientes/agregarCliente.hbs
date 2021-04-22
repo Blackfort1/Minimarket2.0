@@ -1,0 +1,103 @@
+
+<div class="container p-4">
+    <h2 style="text-align: center;">Agregar Clientes</h2>
+    <div class="row">
+        <div class="col-md-4 margin-left:auto margin-right:auto ">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" autocomplete="off" onsubmit="return validarFormulario()" >
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="RUT" name="RUT" placeholder="RUT" autofocus
+                                aria-autocomplete="none" oninput="checkRut(this)" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="NOMBRE" name="NOMBRE" placeholder="Primer Nombre" required>
+                            <div id="nombre_error" style="font-size:14px; color:#FF0000;"></div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="PATERNO" name="APELLIDOP" placeholder="Apellido Paterno" required>
+                            <div id="paterno_error" style="font-size:14px; color:#FF0000;"></div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="MATERNO" name="APELLIDOM" placeholder="Apellido Materno" required>
+                            <div id="materno_error" style="font-size:14px; color:#FF0000;"></div>
+                        </div>
+                        <div class="mb-3">
+                             <div class="form-check">
+                            <input class="form-check-input" type="radio" name="SEXO" id="m"
+                                value="1" checked>
+                            <label class="form-check-label" for="m">
+                                Masculino
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="SEXO" value="2"
+                                id="f">
+                            <label class="form-check-label" for="f">
+                                Femenino
+                            </label>
+                            </div>
+                               <div class="form-check">
+                            <input class="form-check-input" type="radio" name="SEXO" id="O"
+                                value="3">
+                            <label class="form-check-label" for="O">
+                               Otro
+                            </label>
+                        </div>
+                        </div></br>
+                         <div class="mb-3">
+                            <input type="text" class="form-control" id="TEL" name="TELEFONO" placeholder="Teléfono ej: 9541234547" required>
+                            <div id="tel_error" style="font-size:14px; color:#FF0000;"></div>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="CORREO" placeholder="Correo@ejemplo.com" required>
+                        </div>
+                         
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="CALLE" name="CALLE" placeholder="Calle" required>
+                           
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="NUM" name="NUMERO" placeholder="Número ej: 123" required>
+                           
+                        </div>
+                       <div class="mb-3">
+                            <select class="form-control" id="region" name="REGION">
+                             <option value="0">Seleccione su región...</option>
+                             {{#each regiones}}
+                                <option value={{Id_Region}}>{{Nombre}}</option>
+                             {{/each}}
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" id="comunas" name="COMUNA">
+                             <option value="0">Seleccione su comuna...</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="TIPO" id="flexRadioDefault1"
+                                value="1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Persona
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="TIPO" value="2"
+                                id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Empresa
+                            </label>
+                        </div></br>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">
+                                Agregar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+
+<div class="container p-4 mx-auto">
+    <h2>Clientes</h2>
+    <br>
+<table class="table table-hover" id="tablaCliente">
+  
+
+   
+ <form class="form-inline my-2 my-lg-0">
+                        
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" id="cliente" placeholder="Buscar Cliente" />
+                          
+
+                        </div>
+                    </form>
+                    <br>
+  <thead>
+    <th>RUT</th>
+    <th>Nombre</th>
+    <th>A. Paterno</th>
+    <th>A. Materno</th>
+    <th>Teléfono</th>
+    <th>Correo</th>
+    <th colspan="3"></th>
+      </thead>  
+    
+    <tbody>
+    {{#each clientes}}
+        <tr>
+            <td>  {{Rut}}</td>
+            <td>  {{Nombre}}</td>
+            <td>  {{Apellido_Paterno}}</td>
+            <td>  {{Apellido_Materno}}</td>
+            <td>  {{Telefono}}</td>
+            <td>  {{Correo}}</td>
+           
+
+
+            <td>  <button type="button" class="view" data-toggle="modal" title="Ver Detalle" data-target=".bd-example-modal-xl" onclick="detalle('{{Rut}}')">
+                <i class="material-icons">&#xE417;</i></button></td>
+            <td>  <a href='clientes/editarCliente/{{Rut}}' class="edit" title="Actualizar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
+            <td>  <a href='clientes/eliminarCliente/{{Rut}}'  class="delete" title="Eliminar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a> </td>
+        </tr>
+    {{/each}}
+    
+
+</tbody>
+
+</table>
+
+
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detalle</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+             <div class="modal-body">
+          <div class="card">
+                              <div class="card-header bg-dark">
+                                  
+                              </div>
+                              <div class="card-body">
+          <table id="detalleCliente" class="table">
+              <thead>
+              <th>Sexo</th>
+              <th>Dirección</th>
+              <th>Comuna</th>
+              <th>Region</th>
+              <th>Tipo</th>
+            
+             
+
+              </thead>
+  <tfoot>
+          <tr>
+             
+
+          </tr>
+      </tfoot>
+      <tbody class="tbDetalle">
+
+      </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ 
+<div class="clearfix">
+                <div class="hint-text">Mostrando <b>5</b> de <b>25</b> entradas</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+</div>
