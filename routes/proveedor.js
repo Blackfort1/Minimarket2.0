@@ -81,12 +81,12 @@ router.post('/editarProveedor/:rut', async (req,res) =>{
     }
 });
 
-router.post('/eliminarProveedor/:rut', async (req,res) =>{
+router.post('/eliminarProveedor/:id', async (req,res) =>{
     try {
-        const {rut} = req.params;
-        const proveedor = await pool.query('call eliminar_proveedor (?)',[rut]);
+        const {idProveedor} = req.params;
+        await pool.query('call eliminar_Proveedor (?)',[idProveedor]);
         res.json(proveedor);
-        console.log(rut);
+        res.redirect('/');
     } catch (e) {
         console.log(e)
     }

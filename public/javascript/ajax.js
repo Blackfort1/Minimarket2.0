@@ -63,7 +63,7 @@ let tablaProveedor =  $('#tablaProveedor').DataTable({
       {"data":"direccion"},
       {"data":"numero"},
       {"data" :"correo"},  
-      {"data": "rut", render:function(data)
+      {"data": "idProveedor", render:function(data)
       {
         return `<td>  <a href='/proveedor/editarProveedor/`+data+`' class='edit' title='ActualizarProveedor' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a></td>`+
                `<td>  <a href='#' onClick='eliminarProveedor("`+data+`")'class='delete' title='EliminarProvedoor' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a> </td>`

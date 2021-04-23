@@ -63,6 +63,7 @@ router.get('/eliminarProductos/:idProductos', async (req,res) =>{
     try {
         const {idProductos} = req.params;
         await pool.query('call eliminar_Productos (?)',[idProductos]);
+        res.json(proveedor);
         res.redirect('/productos');
         
     } catch (e) {
