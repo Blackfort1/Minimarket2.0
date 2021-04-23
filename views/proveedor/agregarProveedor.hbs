@@ -1,6 +1,6 @@
 <h2 style="text-align: center;">Agregar Proveedor</h2>
 <div class="container p-4">
-  <form class="row g-3 needs-validation" novalidate>
+  <form method="POST" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">RUT</label>
       <input type="text" class="form-control" id="RUT" name="RUT" placeholder="RUT" autofocus aria-autocomplete="none"
@@ -20,15 +20,11 @@
       <div class="invalid-feedback">
       </div>
     </div>
-
-
     <div class="col-md-3">
       <label for="validationCustom04" class="form-label">Comuna</label>
-      <select class="form-control" id="comunas" name="COMUNAS">
+      <select class="form-control" id="comunas" name="COMUNA">
         <option value="0">Seleccione su comuna...</option>
       </select>
-      <div class="invalid-feedback">
-      </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Nombre</label>

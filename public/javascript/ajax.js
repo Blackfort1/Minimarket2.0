@@ -63,7 +63,7 @@ let tablaProveedor =  $('#tablaProveedor').DataTable({
       {"data":"direccion"},
       {"data":"numero"},
       {"data" :"correo"},  
-      {"rut": "rut", render:function(data)
+      {"data": "rut", render:function(data)
       {
         return `<td>  <a href='/proveedor/editarProveedor/`+data+`' class='edit' title='ActualizarProveedor' data-toggle='tooltip'><i class='material-icons'>&#xE254;</i></a></td>`+
                `<td>  <a href='#' onClick='eliminarProveedor("`+data+`")'class='delete' title='EliminarProvedoor' data-toggle='tooltip'><i class='material-icons'>&#xE872;</i></a> </td>`
@@ -142,6 +142,42 @@ $("#region").change(function () {
           },
           success: () => {
             tablaClientes.ajax.reload();      
+            Swal.fire(
+              'Eliminado!',
+              'El cliente ha sido eliminado.',
+              'success'
+            );
+          }
+        });
+      }
+    })
+  
+  
+  };
+
+  function eliminarProveedor(idProveedor) {
+
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Borrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+  
+        $.ajax({
+  
+          url1: "/proveedor/eliminarProveedor/" + idProveedor,
+          type: "POST",
+          data: {
+            id: idProveedor
+          },
+          success: () => {
+            tablaProveedor.ajax.reload();      
             Swal.fire(
               'Eliminado!',
               'El cliente ha sido eliminado.',
